@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanban Buddy</title>
+<link rel="icon" type="image/png" href="media/favicon.png">
+<link rel="stylesheet" href="https://isafuianish-dev.github.io/webapp_cdnBuddy/css/tokens.css">
+<link rel="stylesheet" href="https://isafuianish-dev.github.io/webapp_cdnBuddy/css/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/theme-init.js" data-app="webapp_kanbanBuddy"></script>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="brand-icon" aria-hidden="true"><span class="icon" style="-webkit-mask-image:url(media/icon.svg);mask-image:url(media/icon.svg);"></span></span>
+      <h1>Kanban Buddy</h1>
+    </div>
+    <div class="topbar-actions">
+      <button id="btnSettings" class="btn btn-ghost btn-icon" title="Settings" aria-label="Settings"></button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="panel panel-boards">
+      <div class="panel-header">
+        <input type="search" id="boardSearch" placeholder="Search" class="search-input" aria-label="Search boards">
+        <div class="panel-header-actions">
+          <button id="btnAddBoard" class="btn btn-primary">Add Board</button>
+          <button id="btnExportData" class="btn btn-ghost btn-icon" title="Export all data as a JSON backup" aria-label="Export Data"></button>
+          <label class="btn btn-ghost btn-icon file-btn" title="Import a JSON backup" aria-label="Import Data">
+            <input type="file" id="fileImportData" accept="application/json">
+          </label>
+        </div>
+      </div>
+      <ul id="boardList" class="board-list"></ul>
+      <p class="empty-hint sidebar-sample-hint" id="sidebarLoadSampleHint" hidden>No boards yet. <a href="#" id="linkLoadSampleSidebar" class="link-accent">Load sample</a>.</p>
+    </aside>
+
+    <main class="panel panel-detail" id="boardDetail">
+      <div class="empty-state" id="emptyState"></div>
+
+      <div class="board-detail-content" id="boardDetailContent" hidden>
+        <section class="board-section columns-wrap" id="columnsWrap">
+          <div class="columns-wrap-header">
+            <div class="columns-wrap-header-left" id="teamToggleRow">
+              <div id="priorityFilterWrap" class="priority-filter-wrap"></div>
+              <div class="team-toggle-divider" aria-hidden="true"></div>
+              <div id="teamList" class="team-list"></div>
+              <p id="teamEmpty" class="empty-hint" hidden>No team members yet.</p>
+              <button id="btnAddUser" class="btn btn-ghost btn-sm btn-icon" title="Add team member" aria-label="Add team member"></button>
+            </div>
+            <div class="columns-wrap-header-actions">
+              <div class="filter-status" id="filterStatus" hidden></div>
+              <button id="btnAddTask" class="btn btn-primary"></button>
+              <button id="btnEditBoard" class="btn btn-ghost btn-icon" title="Edit Board" aria-label="Edit Board"></button>
+              <button id="btnOpenOverview" class="btn btn-ghost btn-icon" title="Overview" aria-label="Overview"></button>
+            </div>
+          </div>
+          <div id="columnsRow" class="columns-row"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/utils.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/icons.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/modal.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/theme.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/settings.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/markdown.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/manual.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/confetti.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
